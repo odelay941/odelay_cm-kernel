@@ -181,7 +181,7 @@ not_angel:
 		and	r4, r4, #0xf8000000
 		add	r4, r4, #TEXT_OFFSET
 #else
-		ldr	r4, =CONFIG_ZRELADDR
+		ldr	r4, =zreladdr
 #endif
 
 		bl	cache_on

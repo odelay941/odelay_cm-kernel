@@ -3,7 +3,8 @@
 
 kernelBaseName="2.6.35-odelay_cm-kernel"
 
-for kernel in GB-HAVS-AXI-128-CFS GB-HAVS-128-CFS GB-SVS-AXI-128-CFS GB-SVS-128-CFS GB-HAVS-AXI-128-BFS GB-HAVS-128-BFS GB-SVS-AXI-128-BFS GB-SVS-128-BFS
+for kernel in GB-HAVS-AXI-128-CFS GB-HAVS-128-CFS GB-SVS-AXI-128-CFS GB-SVS-128-CFS 
+
 do
     echo "************************************"
     echo "***** Make $kernel ...."
@@ -20,7 +21,7 @@ do
     then
 	exit
     fi
-   cp .config arch/arm/configs/$kernel"_defconf"
+   cp .config arch/arm/configs/$kernel"_defconfig"
    ZipBuilder/builder.sh
    cp ZipBuilder/update_signed.zip ~/Dropbox/$kernelBaseName-$kernel.zip
 
